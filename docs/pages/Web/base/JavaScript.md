@@ -64,7 +64,7 @@ JS中主要分两种数据类型，一种是基本数据类型，通常是保存
 
 
 
-typeof实现原理：
+### typeof实现原理
 
 ​		js在底层是通过机器码来存储数据的类型信息的，会在变量的机器码的低位1-3位存储其类型信息
 
@@ -78,7 +78,7 @@ typeof实现原理：
 
 
 
-instanceof实现原理：
+### instanceof实现原理
 
 ​		instanceof主要的实现原理就是只要右边变量的prototype在左边变量的原型链上即可。因此，instanceof在查找的过程中会遍历左边变量的原型链，直到找到右边变量的prototype，如果查找失败，则会返回false
 
@@ -102,7 +102,7 @@ function new_instance_of(leftVaule, rightVaule) {
 
 
 
-Object.prototype.toString.call原理：
+### Object.prototype.toString.call原理
 
 ​	获取this指向的那个对象的[[Class]]属性的值，然后去查找该对象的特定类属性标识，然后返回类似[object  className]格式的字符串。**每一种类型都有自己唯一的特定类属性标识**
 
