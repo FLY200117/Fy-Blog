@@ -39,6 +39,7 @@ JS中主要分两种数据类型，一种是基本数据类型，通常是保存
 + String
 + Number
 + Symbol
++ Bigint
 
 
 
@@ -96,6 +97,20 @@ function new_instance_of(leftVaule, rightVaule) {
     }
 }
 ```
+
+
+
+
+
+Object.prototype.toString.call原理：
+
+​	获取this指向的那个对象的[[Class]]属性的值，然后去查找该对象的特定类属性标识，然后返回类似[object  className]格式的字符串。**每一种类型都有自己唯一的特定类属性标识**
+
+而[[Class]]的定义为：内部属性 描述，所有的对象（原生对象和宿主对象）都拥有该属性，且不能被任何人修改
+
+
+
+`缺点是，无法区分自定义对象类型，还会由于装箱操作产生很多临时对象`
 
 
 
