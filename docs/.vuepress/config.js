@@ -348,7 +348,10 @@ export default defineUserConfig({
                     children: [
                         '/pages/Skill/essay.md',
                         '/pages/Skill/前后端分离.md',
-                        '/pages/Skill/blog.md'
+                        '/pages/Skill/blog.md',
+                        '/pages/Skill/File.md',
+                        '/pages/Skill/Login.md',
+                        '/pages/Skill/VirtualList.md'
                     ]
                 }
             ],
