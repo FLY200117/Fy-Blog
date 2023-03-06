@@ -566,3 +566,145 @@ let interface: MyInterface = {
 
 
 
+## 常见的工具类型
+
+在定义一些
+
+
+
+### Partial
+
+Partial类型指定只需要满足部分属性即可，一个都没满足也行
+
+```typescript
+type man = {
+	name： string
+	age?： number
+	hobby: string
+}
+
+const aMan: Partiala<man> = {
+	name: 'a'
+}
+
+// 一个都没有的情况下也是能通过ts检测的
+// const aMan: Partiala<man> = {
+// }
+
+aMan.name = 'aPlus'
+```
+
+
+
+
+
+### Required
+
+Required指定需要符合type或者接口类型的所有属性，缺一不可
+
+```typescript
+type man = {
+	name： string
+	age?： number
+	hobby: string
+}
+
+const bMan: Required<Man> = {
+	name: 'b',
+	age: 21,
+	hobby: 'none'
+}
+```
+
+
+
+
+
+### Readonly
+
+Readonly包装后的所有属性只读，不允许修改
+
+```typescript
+type man = {
+	name： string
+	age?： number
+	hobby: string
+}
+
+const cMan: Readonly<Man> = {
+	name: 'c
+}
+
+// 报错语句
+// cMan.name = 'b'
+```
+
+
+
+### Pick
+
+Pick能指定选取部分属性
+
+```typescript
+interface Person {
+	name: string;
+	age: number;
+	hobby: string;
+	isMale?: boolean;
+}
+
+type PickedPerson = Pick<Person, 'name' | 'age' | 'hobby'>
+
+const student: PickedPerson = {
+	name: 'ss',
+	age: 21,
+}
+```
+
+
+
+
+
+### Omit
+
+Omit能指定去除部分属性
+
+```typescript
+interface Person {
+	name: string;
+	age: number;
+	hobby: string;
+	isMale?: boolean;
+}
+
+type OmitPerson = Omit<Person, 'hobby'>
+
+const student: OmitPerson = {
+	name: 'ss',
+	age: 21,
+}
+```
+
+
+
+
+
+### Extract && Exclude
+
+Extract是交集，而Exclude是差集
+
+```typescript
+type set1 = 1 | 2 | 3 | 4
+type set2 = 4 | 5 | 6 | 7
+
+type ExtractA = Extract<set1,set2>
+type ExcludeA = Exclude<set1,set2>
+type ExcludeB = Exclude<set2,set1>
+
+// 这里的a只能赋值为4，因为交集中只有4
+const a: ExtractA = 4
+
+// 这里的b不能赋值为4，否则会报错
+const b: ExcludeA = 1
+```
+
