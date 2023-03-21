@@ -1,6 +1,25 @@
 # 随笔
 
+## 白屏时间
 
+白屏时间指的是指浏览器从响应用户输入网址地址，到浏览器开始显示内容的时间
+
+- 白屏时间 = firstPaint - performance.timing.navigationStart
+- 白屏时间 = firstPaint - pageStartTime
+
+
+
+## 首屏时间
+
+首屏时间是指用户打开网站开始，到浏览器首屏内容渲染完成的时间。对于用户体验来说，首屏时间是用户对一个网站的重要体验因素
+
+
+
+计算首屏的方法有：
+
+- 首屏模块标签标记法   firstScreen - performance.timing.navigationStart
+- 统计首屏内加载最慢的图片的时间   加载最慢的图片的时间点 - performance.timing.navigationStart
+- 自定义首屏内容计算法
 
 ## 白屏时间优化
 
