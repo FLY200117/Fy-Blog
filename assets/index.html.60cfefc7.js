@@ -1,0 +1,1 @@
+import{_ as n,r as o,o as t,c,a as r}from"./app.bb973a4f.js";const _={};function s(a,m){const e=o("CommentService");return t(),c("div",null,[r(e)])}const i=n(_,[["render",s],["__file","index.html.vue"]]);export{i as default};
